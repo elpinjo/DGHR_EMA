@@ -1,0 +1,1627 @@
+openapi: 3.0.3
+info:
+  title: SPOR OMS/RMS API
+  description: "European Medicines Agency SPOR (Substance, Product, Organisation and\
+    \ Referential) API for managing lists, terms, organisations, locations, and change\
+    \ requests"
+  contact:
+    name: European Medicines Agency
+    url: https://www.ema.europa.eu/contact
+  version: 1.1.0
+servers:
+- url: https://spor.ema.europa.eu/v1
+  description: Production server
+- url: https://spor-test.ema.europa.eu/v1
+  description: Test server
+security:
+- basicAuth: []
+tags:
+- name: Lists
+  description: Operations on lists
+- name: Terms
+  description: Operations on terms
+- name: Change Requests RMS
+  description: RMS change request operations
+- name: Change Requests OMS
+  description: OMS change request operations
+- name: Documents
+  description: Document management
+- name: Search Queries
+  description: Saved search queries
+- name: Subscriptions
+  description: User subscriptions
+- name: Tags
+  description: Term tagging
+- name: Preferred Names
+  description: Preferred name management
+- name: Organisations
+  description: Organisation operations
+- name: Locations
+  description: Location operations
+paths:
+  /lists:
+    get:
+      tags:
+      - Lists
+      summary: Search lists (EP11)
+      operationId: searchLists
+      parameters:
+      - name: description
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: domain
+        in: query
+        description: Domain IDs separated by ~
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: list-owner
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: pagesize
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 20
+      - name: short-name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - CURRENT
+          - DRAFT
+          - RETIRED
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCollection'
+  /lists/{listId}:
+    get:
+      tags:
+      - Lists
+      summary: Get list detailed (EP12)
+      operationId: getList
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/List'
+  /lists/{listId}/term-summaries:
+    get:
+      tags:
+      - Lists
+      summary: Get list terms summarised (EP13)
+      operationId: getListTermsSummary
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/{listId}/terms:
+    get:
+      tags:
+      - Terms
+      summary: Get list terms detailed (EP17)
+      operationId: getListTerms
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/search-terms:
+    get:
+      tags:
+      - Terms
+      summary: Search terms (EP14)
+      operationId: searchTerms
+      parameters:
+      - name: domain
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 1
+      - name: pagesize
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          default: 20
+      - name: sortby
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: status
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/export-terms:
+    post:
+      tags:
+      - Terms
+      summary: Export terms (EP15)
+      operationId: exportTerms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportTermsRequest'
+        required: true
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/{listId}/terms/{termId}:
+    get:
+      tags:
+      - Terms
+      summary: Get term (EP21)
+      operationId: getTerm
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Term'
+  /lists/{listId}/mappings:
+    get:
+      tags:
+      - Terms
+      summary: Get term mappings (EP24)
+      operationId: getTermMappings
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/{listId}/terms/{termId}/translations/{language}:
+    get:
+      tags:
+      - Terms
+      summary: Get translatable term attributes (EP31)
+      operationId: getTermTranslations
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      - name: language
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Terms
+      summary: Update translatable term attributes (EP33)
+      operationId: updateTermTranslations
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      - name: language
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Translation'
+        required: true
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /change-requests-rms:
+    get:
+      tags:
+      - Change Requests RMS
+      summary: Search change requests RMS (EP41)
+      operationId: searchChangeRequestsRms
+      parameters:
+      - name: owned
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: page
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: pagesize
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sortby
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: summary
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Change Requests RMS
+      summary: Create change request RMS (EP43)
+      operationId: createChangeRequestRms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeRequestRms'
+        required: true
+      responses:
+        "201":
+          description: Created
+  /change-requests-rms/{requestId}:
+    get:
+      tags:
+      - Change Requests RMS
+      summary: Get change request RMS (EP42)
+      operationId: getChangeRequestRms
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: RRQ-100000021
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangeRequestRms'
+    put:
+      tags:
+      - Change Requests RMS
+      summary: Update change request RMS (EP44)
+      operationId: updateChangeRequestRms
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: RRQ-100000021
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeRequestRms'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Change Requests RMS
+      summary: Delete change request RMS (EP45)
+      operationId: deleteChangeRequestRms
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: RRQ-100000021
+      responses:
+        "204":
+          description: Deleted
+  /documents:
+    get:
+      tags:
+      - Documents
+      summary: Search documents (EP55)
+      operationId: searchDocuments
+      parameters:
+      - name: app-domain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: doc-type
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Documents
+      summary: Create document (EP51)
+      operationId: createDocument
+      parameters:
+      - name: app-domain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: doc-type
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Document'
+        required: true
+      responses:
+        "201":
+          description: Created
+  /documents/{documentId}:
+    get:
+      tags:
+      - Documents
+      summary: Get document (EP54)
+      operationId: getDocument
+      parameters:
+      - name: documentId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: uuid
+      - name: app-domain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: doc-type
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Documents
+      summary: Update document (EP52)
+      operationId: updateDocument
+      parameters:
+      - name: documentId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: uuid
+      - name: app-domain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: doc-type
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Document'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Documents
+      summary: Delete document (EP53)
+      operationId: deleteDocument
+      parameters:
+      - name: documentId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: uuid
+      - name: app-domain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: doc-type
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Deleted
+  /search-queries:
+    get:
+      tags:
+      - Search Queries
+      summary: Get all search queries (EP61)
+      operationId: getAllSearchQueries
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Search Queries
+      summary: Create search query (EP62)
+      operationId: createSearchQuery
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchQuery'
+        required: true
+      responses:
+        "201":
+          description: Created
+  /search-queries/{queryId}:
+    get:
+      tags:
+      - Search Queries
+      summary: Get search query (EP63)
+      operationId: getSearchQuery
+      parameters:
+      - name: queryId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Search Queries
+      summary: Update search query (EP64)
+      operationId: updateSearchQuery
+      parameters:
+      - name: queryId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchQuery'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Search Queries
+      summary: Delete search query (EP65)
+      operationId: deleteSearchQuery
+      parameters:
+      - name: queryId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Deleted
+  /subscriptions:
+    get:
+      tags:
+      - Subscriptions
+      summary: Get all subscriptions (EP71)
+      operationId: getAllSubscriptions
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Subscriptions
+      summary: Create/update/delete user subscriptions (EP73)
+      operationId: updateSubscriptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/{listId}/subscriptions:
+    get:
+      tags:
+      - Subscriptions
+      summary: Get subscriptions for a specific list (EP72)
+      operationId: getListSubscriptions
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /tags:
+    get:
+      tags:
+      - Tags
+      summary: Get all tags (EP81)
+      operationId: getAllTags
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Tags
+      summary: Create tag (EP83)
+      operationId: createTag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        "201":
+          description: Created
+  /tags/{tagId}:
+    get:
+      tags:
+      - Tags
+      summary: Get tag (EP82)
+      operationId: getTag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Tags
+      summary: Update tag (EP84)
+      operationId: updateTag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - Tags
+      summary: Delete tag (EP85)
+      operationId: deleteTag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Deleted
+  /preferred-names:
+    get:
+      tags:
+      - Preferred Names
+      summary: Get all preferred names (EP90)
+      operationId: getAllPreferredNames
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /lists/{listId}/terms/{termId}/preferred-name:
+    get:
+      tags:
+      - Preferred Names
+      summary: Get preferred name (EP91)
+      operationId: getPreferredName
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Preferred Names
+      summary: Update preferred name (EP93)
+      operationId: updatePreferredName
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreferredName'
+        required: true
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Preferred Names
+      summary: Create preferred name (EP92)
+      operationId: createPreferredName
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreferredName'
+        required: true
+      responses:
+        "201":
+          description: Created
+    delete:
+      tags:
+      - Preferred Names
+      summary: Delete preferred name (EP94)
+      operationId: deletePreferredName
+      parameters:
+      - name: listId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093533"
+      - name: termId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "100000093554"
+      responses:
+        "204":
+          description: Deleted
+  /organisations:
+    get:
+      tags:
+      - Organisations
+      summary: Search organisations (EP101)
+      operationId: searchOrganisations
+      parameters:
+      - name: pagesize
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+        example: 20
+      - name: org-name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: GSK
+      - name: org-modified-after
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 2024-10-10T00:00:00.000Z
+      - name: 'org-status '
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - ACTIVE
+          - INACTIVE
+        example: ACTIVE
+      - name: summary
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - "true"
+          - "false"
+        example: false
+      - name: page
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+        example: 3
+      - name: searchtoken
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 4e41a55c-d0e3-44e1-92f9-4f634f1a2176
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organisations'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Organisations'
+  /organisations/{orgId}:
+    get:
+      tags:
+      - Organisations
+      summary: Get organisation (EP102)
+      operationId: getOrganisation
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organisation'
+  /locations:
+    get:
+      tags:
+      - Locations
+      summary: Search locations (EP111)
+      operationId: searchLocations
+      parameters:
+      - name: loc-address
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: loc-country
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: loc-status
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: org-id
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: org-location-id
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: org-name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: pagesize
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sortby
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: summary
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /locations/{locationId}:
+    get:
+      tags:
+      - Locations
+      summary: Get location (EP112)
+      operationId: getLocation
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /change-requests-oms:
+    get:
+      tags:
+      - Change Requests OMS
+      summary: Search change requests OMS (EP121)
+      operationId: searchChangeRequestsOms
+      parameters:
+      - name: summary
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      tags:
+      - Change Requests OMS
+      summary: Create change request OMS (EP123)
+      operationId: createChangeRequestOms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeRequestOms'
+        required: true
+      responses:
+        "201":
+          description: Created
+  /change-requests-oms/{requestId}:
+    get:
+      tags:
+      - Change Requests OMS
+      summary: Get change request OMS (EP122)
+      operationId: getChangeRequestOms
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    List:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        short-name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum:
+          - CURRENT
+          - DRAFT
+          - RETIRED
+        domain:
+          type: string
+        list-owner:
+          type: string
+    ListCollection:
+      type: object
+      properties:
+        lists:
+          type: array
+          items:
+            $ref: '#/components/schemas/List'
+    Term:
+      type: object
+      properties:
+        id:
+          type: string
+        term-names:
+          type: object
+        short-names:
+          type: object
+        other-names:
+          type: object
+        status:
+          type: object
+        domains:
+          type: object
+        visibility:
+          type: object
+    ExportTermsRequest:
+      type: object
+      properties:
+        identifiers:
+          type: object
+          properties:
+            schema-version:
+              type: string
+            identifier:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  link:
+                    type: object
+    Translation:
+      type: object
+      properties:
+        schema-version:
+          type: string
+        translation:
+          type: object
+    ChangeRequestRms:
+      type: object
+      properties:
+        change-request-rms:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+              enum:
+              - ADD_TERM
+              - UPDATE_TERM
+              - DELETE_TERM
+            status:
+              type: string
+              enum:
+              - SAVED
+              - SUBMITTED
+              - APPROVED
+              - REJECTED
+            requestor-user-id:
+              type: string
+            requestor-email:
+              type: string
+              format: email
+            requestor-phone:
+              type: string
+            justification:
+              type: string
+            date-submitted:
+              type: string
+              format: date-time
+            list-ref:
+              type: object
+            draft-term:
+              type: object
+            documents:
+              type: object
+    ChangeRequestOms:
+      type: object
+      properties:
+        change-request-oms:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+              enum:
+              - ADD-ORGANISATION
+              - UPD-ORGANISATION
+              - ADD-LOCATION
+              - UPD-LOCATION
+              - UPD-ORG-AND-LOCATION
+            status:
+              type: string
+            request-reason:
+              type: object
+            requestor-user-id:
+              type: string
+            requestor-email:
+              type: string
+            requestor-phone:
+              type: string
+            justification:
+              type: string
+            draft-organisation:
+              type: object
+            draft-location:
+              type: object
+            documents:
+              type: object
+    Document:
+      type: object
+      properties:
+        document:
+          type: object
+          properties:
+            type:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+            mime-type:
+              type: string
+            published-date:
+              type: string
+              format: date
+            file-name:
+              type: string
+            file-base64:
+              type: string
+              format: byte
+            version:
+              type: string
+            application-domain:
+              type: string
+    SearchQuery:
+      type: object
+      properties:
+        search-query:
+          type: object
+          properties:
+            name:
+              type: string
+            search-type:
+              type: string
+            user-id:
+              type: string
+            search-criteria:
+              type: object
+    Subscription:
+      type: object
+      properties:
+        subscription:
+          type: object
+          properties:
+            user-id:
+              type: string
+            subscribe-to-new-lists:
+              type: boolean
+            subscription-email:
+              type: string
+              format: email
+            subscribed-lists:
+              type: object
+    Tag:
+      type: object
+      properties:
+        tag:
+          type: object
+          properties:
+            tag-name:
+              type: string
+            user-id:
+              type: string
+            term-refs:
+              type: object
+    PreferredName:
+      type: object
+      properties:
+        preferred-name:
+          type: object
+          properties:
+            schema-version:
+              type: string
+            term-ref:
+              type: object
+            user-id:
+              type: string
+            translation-id:
+              type: string
+    Organisations:
+      type: object
+      properties:
+        next-page:
+          type: string
+        query-link:
+          type: string
+        query-timestamp:
+          type: string
+        schema-version:
+          type: string
+        total-items:
+          type: string
+        organisation:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organisation'
+    Organisation:
+      type: object
+      properties:
+        operational-attributes:
+          type: object
+        organisation-id:
+          type: string
+        active-request:
+          type: boolean
+        identifiers:
+          type: object
+        status:
+          type: string
+          enum:
+          - ACTIVE
+          - INACTIVE
+        languages:
+          type: array
+          items:
+            type: object
+        name:
+          type: string
+        short-name:
+          type: string
+        acronym:
+          type: string
+        alterantive-names:
+          type: array
+          items:
+            type: object
+        locations:
+          type: array
+          items:
+            type: object
+  parameters:
+    ListId:
+      name: listId
+      in: path
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: "100000093533"
+    TermId:
+      name: termId
+      in: path
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: "100000093554"
+    RequestId:
+      name: requestId
+      in: path
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: RRQ-100000021
+    DocumentId:
+      name: documentId
+      in: path
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic

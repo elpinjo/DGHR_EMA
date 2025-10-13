@@ -1,0 +1,3767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">restDescriptor</value>
+  <value name="node_subtype">openAPIConsumer</value>
+  <value name="node_nsName">dghr.ema.spor.api:SPOR</value>
+  <value name="node_pkg">DGHR_EMA</value>
+  <value name="is_public">false</value>
+  <value name="sourceUri">file:///Users/misja/git/SampleAPI/SPOR/SPOR-spec.yml</value>
+  <value name="swaggerUrl">file:/Users/misja/git/SampleAPI/SPOR/SPOR-spec.yml</value>
+  <Boolean name="modifiable">true</Boolean>
+  <record name="security" javaclass="com.wm.util.Values">
+    <array name="securityMap" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="name">basicAuth</value>
+      </record>
+    </array>
+  </record>
+  <record name="restTags" javaclass="com.wm.util.Values">
+    <record name="Lists" javaclass="com.wm.util.Values">
+      <value name="description">Operations on lists</value>
+      <value name="name">Lists</value>
+      <value name="description">Operations on lists</value>
+    </record>
+    <record name="Terms" javaclass="com.wm.util.Values">
+      <value name="description">Operations on terms</value>
+      <value name="name">Terms</value>
+      <value name="description">Operations on terms</value>
+    </record>
+    <record name="Change Requests RMS" javaclass="com.wm.util.Values">
+      <value name="description">RMS change request operations</value>
+      <value name="name">Change Requests RMS</value>
+      <value name="description">RMS change request operations</value>
+    </record>
+    <record name="Change Requests OMS" javaclass="com.wm.util.Values">
+      <value name="description">OMS change request operations</value>
+      <value name="name">Change Requests OMS</value>
+      <value name="description">OMS change request operations</value>
+    </record>
+    <record name="Documents" javaclass="com.wm.util.Values">
+      <value name="description">Document management</value>
+      <value name="name">Documents</value>
+      <value name="description">Document management</value>
+    </record>
+    <record name="Search Queries" javaclass="com.wm.util.Values">
+      <value name="description">Saved search queries</value>
+      <value name="name">Search Queries</value>
+      <value name="description">Saved search queries</value>
+    </record>
+    <record name="Subscriptions" javaclass="com.wm.util.Values">
+      <value name="description">User subscriptions</value>
+      <value name="name">Subscriptions</value>
+      <value name="description">User subscriptions</value>
+    </record>
+    <record name="Tags" javaclass="com.wm.util.Values">
+      <value name="description">Term tagging</value>
+      <value name="name">Tags</value>
+      <value name="description">Term tagging</value>
+    </record>
+    <record name="Preferred Names" javaclass="com.wm.util.Values">
+      <value name="description">Preferred name management</value>
+      <value name="name">Preferred Names</value>
+      <value name="description">Preferred name management</value>
+    </record>
+    <record name="Organisations" javaclass="com.wm.util.Values">
+      <value name="description">Organisation operations</value>
+      <value name="name">Organisations</value>
+      <value name="description">Organisation operations</value>
+    </record>
+    <record name="Locations" javaclass="com.wm.util.Values">
+      <value name="description">Location operations</value>
+      <value name="name">Locations</value>
+      <value name="description">Location operations</value>
+    </record>
+  </record>
+  <value name="version">3.0.3</value>
+  <record name="info" javaclass="com.wm.util.Values">
+    <value name="description">European Medicines Agency SPOR (Substance, Product, Organisation and Referential) API for managing lists, terms, organisations, locations, and change requests</value>
+    <value name="title">SPOR OMS/RMS API</value>
+    <null name="termsOfService"/>
+    <value name="version">1.1.0</value>
+    <record name="contact" javaclass="com.wm.util.Values">
+      <value name="name">European Medicines Agency</value>
+      <value name="url">https://www.ema.europa.eu/contact</value>
+    </record>
+  </record>
+  <array name="servers" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="description">Production server</value>
+      <value name="url">https://spor.ema.europa.eu/v1</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="description">Test server</value>
+      <value name="url">https://spor-test.ema.europa.eu/v1</value>
+    </record>
+  </array>
+  <record name="paths" javaclass="com.wm.util.Values">
+    <record name="/lists" javaclass="com.wm.util.Values">
+      <value name="path">/lists</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists</value>
+          <value name="summary">Search lists (EP11)</value>
+          <value name="operationId">searchLists</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">description</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">description</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="description">Domain IDs separated by ~</value>
+              <value name="name">domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">list-owner</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">list-owner</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">name</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">name</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">pagesize</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">pagesize</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">short-name</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">short-name</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">status</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">status</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">ListCollection</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ListCollection</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchLists</value>
+          <array name="tags" type="value" depth="1">
+            <value>Lists</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}</value>
+          <value name="summary">Get list detailed (EP12)</value>
+          <value name="operationId">getList</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">List</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:List</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getList</value>
+          <array name="tags" type="value" depth="1">
+            <value>Lists</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/term-summaries" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/term-summaries</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/term-summaries</value>
+          <value name="summary">Get list terms summarised (EP13)</value>
+          <value name="operationId">getListTermsSummary</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getListTermsSummary</value>
+          <array name="tags" type="value" depth="1">
+            <value>Lists</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/terms" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms</value>
+          <value name="summary">Get list terms detailed (EP17)</value>
+          <value name="operationId">getListTerms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getListTerms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/search-terms" javaclass="com.wm.util.Values">
+      <value name="path">/lists/search-terms</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/search-terms</value>
+          <value name="summary">Search terms (EP14)</value>
+          <value name="operationId">searchTerms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">name</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">name</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">page</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">page</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">pagesize</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">pagesize</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">sortby</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">sortby</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">status</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">status</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchTerms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/export-terms" javaclass="com.wm.util.Values">
+      <value name="path">/lists/export-terms</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/lists/export-terms</value>
+          <value name="summary">Export terms (EP15)</value>
+          <value name="operationId">exportTerms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">ExportTermsRequest</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ExportTermsRequest</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:exportTerms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/terms/{termId}" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}</value>
+          <value name="summary">Get term (EP21)</value>
+          <value name="operationId">getTerm</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">Term</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Term</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getTerm</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/mappings" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/mappings</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/mappings</value>
+          <value name="summary">Get term mappings (EP24)</value>
+          <value name="operationId">getTermMappings</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getTermMappings</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/terms/{termId}/translations/{language}" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}/translations/{language}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/translations/{language}</value>
+          <value name="summary">Get translatable term attributes (EP31)</value>
+          <value name="operationId">getTermTranslations</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">language</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">language</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getTermTranslations</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/translations/{language}</value>
+          <value name="summary">Update translatable term attributes (EP33)</value>
+          <value name="operationId">updateTermTranslations</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">language</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">language</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Translation</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Translation</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateTermTranslations</value>
+          <array name="tags" type="value" depth="1">
+            <value>Terms</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/change-requests-rms" javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-rms</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-rms</value>
+          <value name="summary">Search change requests RMS (EP41)</value>
+          <value name="operationId">searchChangeRequestsRms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">owned</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">owned</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BOOLEAN</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">page</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">page</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">pagesize</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">pagesize</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">sortby</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">sortby</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">summary</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">summary</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BOOLEAN</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchChangeRequestsRms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests RMS</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-rms</value>
+          <value name="summary">Create change request RMS (EP43)</value>
+          <value name="operationId">createChangeRequestRms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">ChangeRequestRms</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestRms</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createChangeRequestRms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests RMS</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/change-requests-rms/{requestId}" javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-rms/{requestId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-rms/{requestId}</value>
+          <value name="summary">Get change request RMS (EP42)</value>
+          <value name="operationId">getChangeRequestRms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">requestId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">requestId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">ChangeRequestRms</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestRms</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getChangeRequestRms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests RMS</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-rms/{requestId}</value>
+          <value name="summary">Update change request RMS (EP44)</value>
+          <value name="operationId">updateChangeRequestRms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">requestId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">requestId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">ChangeRequestRms</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestRms</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateChangeRequestRms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests RMS</value>
+          </array>
+        </record>
+        <record name="DELETE" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-rms/{requestId}</value>
+          <value name="summary">Delete change request RMS (EP45)</value>
+          <value name="operationId">deleteChangeRequestRms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">requestId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">requestId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="204" javaclass="com.wm.util.Values">
+                <value name="description">Deleted</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:deleteChangeRequestRms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests RMS</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/documents" javaclass="com.wm.util.Values">
+      <value name="path">/documents</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/documents</value>
+          <value name="summary">Search documents (EP55)</value>
+          <value name="operationId">searchDocuments</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">app-domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">app-domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">doc-type</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">doc-type</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchDocuments</value>
+          <array name="tags" type="value" depth="1">
+            <value>Documents</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/documents</value>
+          <value name="summary">Create document (EP51)</value>
+          <value name="operationId">createDocument</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">app-domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">app-domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">doc-type</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">doc-type</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Document</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Document</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createDocument</value>
+          <array name="tags" type="value" depth="1">
+            <value>Documents</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/documents/{documentId}" javaclass="com.wm.util.Values">
+      <value name="path">/documents/{documentId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/documents/{documentId}</value>
+          <value name="summary">Get document (EP54)</value>
+          <value name="operationId">getDocument</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">documentId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">documentId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">app-domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">app-domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">doc-type</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">doc-type</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getDocument</value>
+          <array name="tags" type="value" depth="1">
+            <value>Documents</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/documents/{documentId}</value>
+          <value name="summary">Update document (EP52)</value>
+          <value name="operationId">updateDocument</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">documentId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">documentId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">app-domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">app-domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">doc-type</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">doc-type</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Document</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Document</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateDocument</value>
+          <array name="tags" type="value" depth="1">
+            <value>Documents</value>
+          </array>
+        </record>
+        <record name="DELETE" javaclass="com.wm.util.Values">
+          <value name="path">/documents/{documentId}</value>
+          <value name="summary">Delete document (EP53)</value>
+          <value name="operationId">deleteDocument</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">documentId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">documentId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">app-domain</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">app-domain</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">doc-type</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">doc-type</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="204" javaclass="com.wm.util.Values">
+                <value name="description">Deleted</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:deleteDocument</value>
+          <array name="tags" type="value" depth="1">
+            <value>Documents</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/search-queries" javaclass="com.wm.util.Values">
+      <value name="path">/search-queries</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/search-queries</value>
+          <value name="summary">Get all search queries (EP61)</value>
+          <value name="operationId">getAllSearchQueries</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getAllSearchQueries</value>
+          <array name="tags" type="value" depth="1">
+            <value>Search Queries</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/search-queries</value>
+          <value name="summary">Create search query (EP62)</value>
+          <value name="operationId">createSearchQuery</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">SearchQuery</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:SearchQuery</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createSearchQuery</value>
+          <array name="tags" type="value" depth="1">
+            <value>Search Queries</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/search-queries/{queryId}" javaclass="com.wm.util.Values">
+      <value name="path">/search-queries/{queryId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/search-queries/{queryId}</value>
+          <value name="summary">Get search query (EP63)</value>
+          <value name="operationId">getSearchQuery</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">queryId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">queryId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getSearchQuery</value>
+          <array name="tags" type="value" depth="1">
+            <value>Search Queries</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/search-queries/{queryId}</value>
+          <value name="summary">Update search query (EP64)</value>
+          <value name="operationId">updateSearchQuery</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">queryId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">queryId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">SearchQuery</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:SearchQuery</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateSearchQuery</value>
+          <array name="tags" type="value" depth="1">
+            <value>Search Queries</value>
+          </array>
+        </record>
+        <record name="DELETE" javaclass="com.wm.util.Values">
+          <value name="path">/search-queries/{queryId}</value>
+          <value name="summary">Delete search query (EP65)</value>
+          <value name="operationId">deleteSearchQuery</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">queryId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">queryId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="204" javaclass="com.wm.util.Values">
+                <value name="description">Deleted</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:deleteSearchQuery</value>
+          <array name="tags" type="value" depth="1">
+            <value>Search Queries</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/subscriptions" javaclass="com.wm.util.Values">
+      <value name="path">/subscriptions</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/subscriptions</value>
+          <value name="summary">Get all subscriptions (EP71)</value>
+          <value name="operationId">getAllSubscriptions</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getAllSubscriptions</value>
+          <array name="tags" type="value" depth="1">
+            <value>Subscriptions</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/subscriptions</value>
+          <value name="summary">Create/update/delete user subscriptions (EP73)</value>
+          <value name="operationId">updateSubscriptions</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Subscription</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Subscription</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateSubscriptions</value>
+          <array name="tags" type="value" depth="1">
+            <value>Subscriptions</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/subscriptions" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/subscriptions</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/subscriptions</value>
+          <value name="summary">Get subscriptions for a specific list (EP72)</value>
+          <value name="operationId">getListSubscriptions</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getListSubscriptions</value>
+          <array name="tags" type="value" depth="1">
+            <value>Subscriptions</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/tags" javaclass="com.wm.util.Values">
+      <value name="path">/tags</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/tags</value>
+          <value name="summary">Get all tags (EP81)</value>
+          <value name="operationId">getAllTags</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getAllTags</value>
+          <array name="tags" type="value" depth="1">
+            <value>Tags</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/tags</value>
+          <value name="summary">Create tag (EP83)</value>
+          <value name="operationId">createTag</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Tag</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Tag</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createTag</value>
+          <array name="tags" type="value" depth="1">
+            <value>Tags</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/tags/{tagId}" javaclass="com.wm.util.Values">
+      <value name="path">/tags/{tagId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/tags/{tagId}</value>
+          <value name="summary">Get tag (EP82)</value>
+          <value name="operationId">getTag</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">tagId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">tagId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getTag</value>
+          <array name="tags" type="value" depth="1">
+            <value>Tags</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/tags/{tagId}</value>
+          <value name="summary">Update tag (EP84)</value>
+          <value name="operationId">updateTag</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">tagId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">tagId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">Tag</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Tag</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updateTag</value>
+          <array name="tags" type="value" depth="1">
+            <value>Tags</value>
+          </array>
+        </record>
+        <record name="DELETE" javaclass="com.wm.util.Values">
+          <value name="path">/tags/{tagId}</value>
+          <value name="summary">Delete tag (EP85)</value>
+          <value name="operationId">deleteTag</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">tagId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">tagId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="204" javaclass="com.wm.util.Values">
+                <value name="description">Deleted</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:deleteTag</value>
+          <array name="tags" type="value" depth="1">
+            <value>Tags</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/preferred-names" javaclass="com.wm.util.Values">
+      <value name="path">/preferred-names</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/preferred-names</value>
+          <value name="summary">Get all preferred names (EP90)</value>
+          <value name="operationId">getAllPreferredNames</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getAllPreferredNames</value>
+          <array name="tags" type="value" depth="1">
+            <value>Preferred Names</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/lists/{listId}/terms/{termId}/preferred-name" javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+          <value name="summary">Get preferred name (EP91)</value>
+          <value name="operationId">getPreferredName</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getPreferredName</value>
+          <array name="tags" type="value" depth="1">
+            <value>Preferred Names</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+          <value name="summary">Create preferred name (EP92)</value>
+          <value name="operationId">createPreferredName</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">PreferredName</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:PreferredName</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createPreferredName</value>
+          <array name="tags" type="value" depth="1">
+            <value>Preferred Names</value>
+          </array>
+        </record>
+        <record name="PUT" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+          <value name="summary">Update preferred name (EP93)</value>
+          <value name="operationId">updatePreferredName</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">PreferredName</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:PreferredName</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Updated</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:updatePreferredName</value>
+          <array name="tags" type="value" depth="1">
+            <value>Preferred Names</value>
+          </array>
+        </record>
+        <record name="DELETE" javaclass="com.wm.util.Values">
+          <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+          <value name="summary">Delete preferred name (EP94)</value>
+          <value name="operationId">deletePreferredName</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">listId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">listId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">termId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">termId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="204" javaclass="com.wm.util.Values">
+                <value name="description">Deleted</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:deletePreferredName</value>
+          <array name="tags" type="value" depth="1">
+            <value>Preferred Names</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/organisations" javaclass="com.wm.util.Values">
+      <value name="path">/organisations</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/organisations</value>
+          <value name="summary">Search organisations (EP101)</value>
+          <value name="operationId">searchOrganisations</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">pagesize</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">pagesize</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">DECIMAL</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-name</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-name</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-modified-after</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-modified-after</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-status </value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-status </value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">summary</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">summary</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">page</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">page</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">DECIMAL</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">searchtoken</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">searchtoken</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">Organisations</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Organisations</value>
+                    </record>
+                  </record>
+                  <record name="application/xml" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">Organisations</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Organisations</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchOrganisations</value>
+          <array name="tags" type="value" depth="1">
+            <value>Organisations</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/organisations/{orgId}" javaclass="com.wm.util.Values">
+      <value name="path">/organisations/{orgId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/organisations/{orgId}</value>
+          <value name="summary">Get organisation (EP102)</value>
+          <value name="operationId">getOrganisation</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">orgId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">orgId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">Organisation</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT_REF</value>
+                      <number name="dimension" type="Integer">0</number>
+                      <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Organisation</value>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getOrganisation</value>
+          <array name="tags" type="value" depth="1">
+            <value>Organisations</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/locations" javaclass="com.wm.util.Values">
+      <value name="path">/locations</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/locations</value>
+          <value name="summary">Search locations (EP111)</value>
+          <value name="operationId">searchLocations</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">loc-address</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">loc-address</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">loc-country</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">loc-country</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">loc-status</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">loc-status</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-id</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-id</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-location-id</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-location-id</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">org-name</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">org-name</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">page</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">page</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">pagesize</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">pagesize</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BIGINT</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">sortby</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">sortby</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="name">summary</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">summary</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BOOLEAN</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchLocations</value>
+          <array name="tags" type="value" depth="1">
+            <value>Locations</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/locations/{locationId}" javaclass="com.wm.util.Values">
+      <value name="path">/locations/{locationId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/locations/{locationId}</value>
+          <value name="summary">Get location (EP112)</value>
+          <value name="operationId">getLocation</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">locationId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">locationId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getLocation</value>
+          <array name="tags" type="value" depth="1">
+            <value>Locations</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/change-requests-oms" javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-oms</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-oms</value>
+          <value name="summary">Search change requests OMS (EP121)</value>
+          <value name="operationId">searchChangeRequestsOms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">summary</value>
+              <value name="sourceType">query</value>
+              <Boolean name="required">false</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">form</value>
+              <Boolean name="explode">true</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">summary</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">BOOLEAN</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:searchChangeRequestsOms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests OMS</value>
+          </array>
+        </record>
+        <record name="POST" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-oms</value>
+          <value name="summary">Create change request OMS (EP123)</value>
+          <value name="operationId">createChangeRequestOms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <record name="requestBody" javaclass="com.wm.util.Values">
+            <Boolean name="required">true</Boolean>
+            <record name="content" javaclass="com.wm.util.Values">
+              <record name="application/json" javaclass="com.wm.util.Values">
+                <record name="schema" javaclass="com.wm.util.Values">
+                  <null name="variableName"/>
+                  <value name="fieldName">ChangeRequestOms</value>
+                  <number name="fieldType" type="Integer">0</number>
+                  <Boolean name="isAutoGenerated">false</Boolean>
+                  <value name="type">DOCUMENT_REF</value>
+                  <number name="dimension" type="Integer">0</number>
+                  <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestOms</value>
+                </record>
+              </record>
+            </record>
+          </record>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="201" javaclass="com.wm.util.Values">
+                <value name="description">Created</value>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:createChangeRequestOms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests OMS</value>
+          </array>
+        </record>
+      </record>
+    </record>
+    <record name="/change-requests-oms/{requestId}" javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-oms/{requestId}</value>
+      <record name="operations" javaclass="com.wm.util.Values">
+        <record name="GET" javaclass="com.wm.util.Values">
+          <value name="path">/change-requests-oms/{requestId}</value>
+          <value name="summary">Get change request OMS (EP122)</value>
+          <value name="operationId">getChangeRequestOms</value>
+          <Boolean name="deprecated">false</Boolean>
+          <array name="parameters" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="name">requestId</value>
+              <value name="sourceType">path</value>
+              <Boolean name="required">true</Boolean>
+              <Boolean name="deprecated">false</Boolean>
+              <Boolean name="allowEmptyValues">false</Boolean>
+              <value name="style">simple</value>
+              <Boolean name="explode">false</Boolean>
+              <Boolean name="allowReserved">false</Boolean>
+              <record name="schema" javaclass="com.wm.util.Values">
+                <null name="variableName"/>
+                <value name="fieldName">requestId</value>
+                <number name="fieldType" type="Integer">0</number>
+                <Boolean name="isAutoGenerated">false</Boolean>
+                <value name="type">STRING</value>
+                <number name="dimension" type="Integer">0</number>
+              </record>
+            </record>
+          </array>
+          <record name="responses" javaclass="com.wm.util.Values">
+            <record name="httpCode" javaclass="com.wm.util.Values">
+              <record name="200" javaclass="com.wm.util.Values">
+                <value name="description">Successful response</value>
+                <record name="content" javaclass="com.wm.util.Values">
+                  <record name="application/json" javaclass="com.wm.util.Values">
+                    <record name="schema" javaclass="com.wm.util.Values">
+                      <null name="variableName"/>
+                      <value name="fieldName">_untitled_1</value>
+                      <number name="fieldType" type="Integer">0</number>
+                      <Boolean name="isAutoGenerated">false</Boolean>
+                      <value name="type">DOCUMENT</value>
+                      <number name="dimension" type="Integer">0</number>
+                    </record>
+                  </record>
+                </record>
+              </record>
+            </record>
+          </record>
+          <value name="serviceNSName">dghr.ema.spor.api.SPOR_.connectors:getChangeRequestOms</value>
+          <array name="tags" type="value" depth="1">
+            <value>Change Requests OMS</value>
+          </array>
+        </record>
+      </record>
+    </record>
+  </record>
+  <record name="components" javaclass="com.wm.util.Values">
+    <record name="schema" javaclass="com.wm.util.Values">
+      <record name="SearchQuery" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">SearchQuery</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:SearchQuery</value>
+      </record>
+      <record name="Translation" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Translation</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Translation</value>
+      </record>
+      <record name="Organisation" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Organisation</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Organisation</value>
+      </record>
+      <record name="ExportTermsRequest" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">ExportTermsRequest</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ExportTermsRequest</value>
+      </record>
+      <record name="Term" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Term</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Term</value>
+      </record>
+      <record name="Document" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Document</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Document</value>
+      </record>
+      <record name="ChangeRequestOms" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">ChangeRequestOms</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestOms</value>
+      </record>
+      <record name="Organisations" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Organisations</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Organisations</value>
+      </record>
+      <record name="ListCollection" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">ListCollection</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ListCollection</value>
+      </record>
+      <record name="List" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">List</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:List</value>
+      </record>
+      <record name="ChangeRequestRms" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">ChangeRequestRms</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestRms</value>
+      </record>
+      <record name="Tag" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Tag</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Tag</value>
+      </record>
+      <record name="PreferredName" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">PreferredName</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:PreferredName</value>
+      </record>
+      <record name="Subscription" javaclass="com.wm.util.Values">
+        <null name="variableName"/>
+        <value name="fieldName">Subscription</value>
+        <number name="fieldType" type="Integer">0</number>
+        <Boolean name="isAutoGenerated">false</Boolean>
+        <value name="type">DOCUMENT_REF</value>
+        <number name="dimension" type="Integer">0</number>
+        <value name="documentRefNSName">dghr.ema.spor.api.SPOR_.docTypes:Subscription</value>
+      </record>
+    </record>
+    <record name="securitySchemes" javaclass="com.wm.util.Values">
+      <record name="basicAuth" javaclass="com.wm.util.Values">
+        <value name="type">http</value>
+        <value name="name">basicAuth</value>
+        <null name="description"/>
+        <value name="schemeName">basic</value>
+      </record>
+      <record name="bearerAuth" javaclass="com.wm.util.Values">
+        <value name="type">http</value>
+        <value name="name">bearerAuth</value>
+        <null name="description"/>
+        <value name="schemeName">bearer</value>
+        <value name="bearerFormat">JWT</value>
+      </record>
+    </record>
+  </record>
+  <array name="generatedDoctypes" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="name">SearchQuery</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:SearchQuery</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Translation</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Translation</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Organisation</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Organisation</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">ExportTermsRequest</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:ExportTermsRequest</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Term</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Term</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Document</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Document</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">ChangeRequestOms</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestOms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Organisations</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Organisations</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">ListCollection</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:ListCollection</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">List</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:List</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">ChangeRequestRms</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:ChangeRequestRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Tag</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Tag</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">PreferredName</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:PreferredName</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">Subscription</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.docTypes:Subscription</value>
+    </record>
+  </array>
+  <array name="generatedServices" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/translations/{language}_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateTermTranslations</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/preferred-name_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updatePreferredName</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/search-queries_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createSearchQuery</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/search-terms_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchTerms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/locations/{locationId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getLocation</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/organisations/{orgId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getOrganisation</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/search-queries/{queryId}_DELETE</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:deleteSearchQuery</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/tags/{tagId}_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateTag</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/translations/{language}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getTermTranslations</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/preferred-name_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getPreferredName</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-oms/{requestId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getChangeRequestOms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-rms/{requestId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getChangeRequestRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/documents/{documentId}_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateDocument</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/search-queries/{queryId}_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateSearchQuery</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/documents/{documentId}_DELETE</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:deleteDocument</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-rms_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createChangeRequestRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-rms/{requestId}_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateChangeRequestRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/preferred-name_DELETE</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:deletePreferredName</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/mappings_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getTermMappings</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-oms_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createChangeRequestOms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/organisations_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchOrganisations</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/term-summaries_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getListTermsSummary</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/documents/{documentId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getDocument</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/search-queries/{queryId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getSearchQuery</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/tags/{tagId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getTag</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/documents_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createDocument</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/preferred-names_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getAllPreferredNames</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-oms_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchChangeRequestsOms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/subscriptions_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getAllSubscriptions</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/subscriptions_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getListSubscriptions</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/tags_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getAllTags</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchLists</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getListTerms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/subscriptions_PUT</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:updateSubscriptions</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/documents_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchDocuments</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/tags/{tagId}_DELETE</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:deleteTag</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getTerm</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}/terms/{termId}/preferred-name_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createPreferredName</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-rms_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchChangeRequestsRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/locations_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:searchLocations</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/tags_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:createTag</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/change-requests-rms/{requestId}_DELETE</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:deleteChangeRequestRms</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/search-queries_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getAllSearchQueries</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/{listId}_GET</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:getList</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="name">/lists/export-terms_POST</value>
+      <value name="nsName">dghr.ema.spor.api.SPOR_.connectors:exportTerms</value>
+    </record>
+  </array>
+  <array name="generatedCallbackServices" type="record" depth="1">
+  </array>
+  <array name="generatedRestResources" type="record" depth="1">
+  </array>
+  <value name="untitledPrefix">_untitled</value>
+  <array name="selectedOperations" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/term-summaries</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/search-terms</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/export-terms</value>
+      <array name="methods" type="value" depth="1">
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/mappings</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}/translations/{language}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-rms</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-rms/{requestId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+        <value>DELETE</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/documents</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/documents/{documentId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+        <value>DELETE</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/search-queries</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/search-queries/{queryId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+        <value>DELETE</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/subscriptions</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/subscriptions</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/tags</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/tags/{tagId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+        <value>DELETE</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/preferred-names</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/lists/{listId}/terms/{termId}/preferred-name</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>PUT</value>
+        <value>POST</value>
+        <value>DELETE</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/organisations</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/organisations/{orgId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/locations</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/locations/{locationId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-oms</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+        <value>POST</value>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="path">/change-requests-oms/{requestId}</value>
+      <array name="methods" type="value" depth="1">
+        <value>GET</value>
+      </array>
+    </record>
+  </array>
+</Values>
