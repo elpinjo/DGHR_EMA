@@ -1532,27 +1532,40 @@ components:
     Organisations:
       type: object
       properties:
-        next-page:
-          type: string
-        query-link:
-          type: string
-        query-timestamp:
-          type: string
-        schema-version:
-          type: string
-        total-items:
-          type: string
-        organisation:
-          type: array
-          items:
-            $ref: '#/components/schemas/Organisation'
+        organisations:
+          type: object
+          properties:
+            next-page:
+              type: string
+            query-link:
+              type: string
+            query-timestamp:
+              type: string
+            schema-version:
+              type: string
+            total-items:
+              type: string
+            organisation:
+              type: array
+              items:
+                $ref: '#/components/schemas/Organisation'
     Organisation:
       type: object
       properties:
         operational-attributes:
           type: object
         organisation-id:
-          type: string
+          type: object
+          properties:
+            id:
+              type: string
+            link:
+              type: object
+              properties:
+                rel:
+                  type: string
+                href:
+                  type: string
         active-request:
           type: boolean
         identifiers:
@@ -1572,14 +1585,25 @@ components:
           type: string
         acronym:
           type: string
-        alterantive-names:
-          type: array
-          items:
-            type: object
+        alternative-names:
+          type: ojbect
+          properties:
+            alternative-name:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                  text:
+                    type: string
         locations:
-          type: array
-          items:
-            type: object
+          type: object
+          properties:
+            location:
+              type: array
+              items:
+                type: object
   parameters:
     ListId:
       name: listId
