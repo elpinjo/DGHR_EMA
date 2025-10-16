@@ -1089,7 +1089,7 @@
 
   <!-- nodes -->
 
-<EXIT FROM="$flow" SIGNAL="FAILURE" FAILURE-MESSAGE="">
+<EXIT FROM="$flow" SIGNAL="FAILURE" FAILURE-MESSAGE="Failed due to API response code: %code%">
   <COMMENT></COMMENT>
 </EXIT>
 </SEQUENCE>
@@ -3983,7 +3983,7 @@
 
   <!-- nodes -->
 
-<EXIT FROM="$flow" SIGNAL="FAILURE" FAILURE-MESSAGE="%code%">
+<EXIT FROM="$flow" SIGNAL="FAILURE" FAILURE-MESSAGE="Failed due to API response code: %code%">
   <COMMENT></COMMENT>
 </EXIT>
 </SEQUENCE>
