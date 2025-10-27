@@ -1546,9 +1546,11 @@ components:
             total-items:
               type: string
             organisation:
-              type: array
-              items:
-                $ref: '#/components/schemas/Organisation'
+              oneOf:
+              - type: array
+                items:
+                  $ref: '#/components/schemas/Organisation'
+              - $ref: '#/components/schemas/Organisation'
     Organisation:
       type: object
       properties:
