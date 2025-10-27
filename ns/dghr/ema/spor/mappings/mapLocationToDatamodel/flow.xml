@@ -1175,6 +1175,11 @@
 </SEQUENCE>
 </LOOP>
 
+<SEQUENCE TIMEOUT="" EXIT-ON="FAILURE" CONDITION="%sporLocation/address/gps-location% != $null" FORM="IF">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
 <INVOKE TIMEOUT="" SERVICE="pub.string:tokenize" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
@@ -2173,4 +2178,5 @@
 <MAPDELETE FIELD="/valueList;1;1">
 </MAPDELETE>
 </MAP>
+</SEQUENCE>
 </FLOW>
